@@ -1,0 +1,15 @@
+plugins {
+    id 'fabric-loom' version '1.18-SNAPSHOT'
+}
+group = 'com.connersaysxd'
+version = '1.0.1'
+base { archivesName = 'flat-five-anvils' }
+repositories { mavenCentral() }
+dependencies {
+    minecraft "com.mojang:minecraft:${project.minecraft_version}"
+    mappings loom.officialMojangMappings()
+    modImplementation "net.fabricmc:fabric-loader:${project.loader_version}"
+}
+processResources { inputs.property 'version', project.version; filesMatching('fabric.mod.json') { expand version: project.version } }
+tasks.withType(JavaCompile).configureEach { options.release = 25 }
+java { toolchain.languageVersion = JavaLanguageVersion.of(25) }
