@@ -1,0 +1,10 @@
+{
+  "schemaVersion":1,
+  "id":"flatfiveanvils",
+  "version":"${version}",
+  "name":"Flat Five Anvils",
+  "environment":"*",
+  "authors":["ConnersaysXD"],
+  "mixins":["flatfiveanvils.mixins.json"],
+  "depends":{"fabricloader":">=0.19.5","java":">=25"}
+}
